@@ -78,9 +78,9 @@ rdpg_latent_positions <- function(A, d) {
   return(latent_positions)
 }
 
-latent_original <- rdpg_latent_positions(A_full, d = k)  # Original full matrix
-latent_incomplete <- rdpg_latent_positions(replace(A, is.na(A), 0), d = k)  # Incomplete matrix
-latent_completed <- rdpg_latent_positions(A_completed, d = k)  # Completed matrix
+latent_original <- rdpg_latent_positions(A_full, d = k) 
+latent_incomplete <- rdpg_latent_positions(replace(A, is.na(A), 0), d = k)  
+latent_completed <- rdpg_latent_positions(A_completed, d = k)  
 
 #kmeans
 kmeans_original <- kmeans(latent_original, centers = 2)$cluster
